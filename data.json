@@ -1,0 +1,284 @@
+{
+    "data": {
+        "slider": [{
+                "position": "slider",
+                "img": "http://res.xiahe.me/uploads/images/20180511/2542ff2f22db7029aa5b45dbf4f25db7.png-banner",
+                "title": "敢潮BRP商业资源计划",
+                "type": "notice",
+                "link": 9
+            },
+            {
+                "position": "slider",
+                "img": "http://res.xiahe.me/uploads/images/20180511/cf9c0fd1fcf537d7153321b734f6ec4e.png-banner",
+                "title": "新手指引",
+                "type": "notice",
+                "link": 14
+            }
+        ],
+        "banner": [{
+            "position": "goods",
+            "img": "http://res.xiahe.me/uploads/images/20180824/fa99f952aec50fd11a11534dfbc04264.jpg-banner",
+            "title": "首页推荐商品",
+            "type": "url",
+            "link": ""
+        }],
+        "area": [{
+                "aid": 339,
+                "cid": 350100,
+                "cover": "http://res.xiahe.me/uploads/images/20180511/5537fe108c7ae8d70648fa2079960ca7.jpg-goods.thumb",
+                "name": "元洪童装城",
+                "remark": ""
+            },
+            {
+                "aid": 338,
+                "cid": 350100,
+                "cover": "http://res.xiahe.me/uploads/images/20180511/09c6a21cc516b6a32b318e36f92f55fc.jpg-goods.thumb",
+                "name": "南台童装精品城",
+                "remark": ""
+            },
+            {
+                "aid": 337,
+                "cid": 350100,
+                "cover": "http://res.xiahe.me/uploads/images/20180511/91c93fda5556d5973702c340203a7937.jpg-goods.thumb",
+                "name": "六一国际童装城",
+                "remark": ""
+            }
+        ],
+        "goods": [{
+                "goods_id": 1968,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180608/Fk3I7Z7g_ktCHwj1P9auKThkq_ur.jpg-goods.thumb",
+                "title": "酷妞族",
+                "code": "6503",
+                "specn": 1,
+                "sales_price": "48.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1,
+                "sid": 34
+            },
+            {
+                "goods_id": 1972,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180606/Frzu505dhgWlbldLeiTr7Dv2YZvW.jpg-goods.thumb",
+                "title": "酷妞族",
+                "code": "2137",
+                "specn": 1,
+                "sales_price": "48.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1,
+                "sid": 34
+            },
+            {
+                "goods_id": 1731,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180526/FkKOBHdPLw7IDHmdvtjjsg2of67N.jpg-goods.thumb",
+                "title": "清纯之恋",
+                "code": "86091",
+                "specn": 1,
+                "sales_price": "75.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1,
+                "sid": 34
+            },
+            {
+                "goods_id": 1914,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180603/Fh0Yiny51_4deYkvhhr89dQr4TWE.jpg-goods.thumb",
+                "title": "韩城",
+                "code": "18626",
+                "specn": 1,
+                "sales_price": "89.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1,
+                "sid": 34
+            },
+            {
+                "goods_id": 1918,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180603/FkBvPqQ2r8D49Uj73nHxg72svRMW.jpg-goods.thumb",
+                "title": "淑雯美黛",
+                "code": "526",
+                "specn": 1,
+                "sales_price": "89.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1,
+                "sid": 34
+            }, {
+                "goods_id": 1718,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180526/Fi-VWDZ7OWTD3aH4EAa3gEzeD-Sk.jpg-goods.thumb",
+                "title": "曼郦佳人露肩",
+                "code": "1856",
+                "specn": 1,
+                "sales_price": "45.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1,
+                "sid": 34
+            }
+        ],
+        "shop": [{
+            "sid": 34,
+            "stype": 2,
+            "logo": "http://res.xiahe.me/public/uploads/user/20180518/FrybfHsXd16ywmhL_lTSXfQQbzEs.png-avatar",
+            "name": "搜索服饰",
+            "contact": "谢秀燕",
+            "mobile": "15960183800",
+            "tel": "0591-87661213",
+            "account": "",
+            "addr": "台江区建新市场二层二区8号",
+            "owner": 39,
+            "idv_status": 1,
+            "blv_status": 1,
+            "views": 566,
+            "opendays": 291,
+            "watch": 0,
+            "fellow": 0,
+            "goods": [{
+                "goods_id": 5029,
+                "thumb": "http://res.xiahe.me/default/none.png",
+                "title": "依之源",
+                "code": "838",
+                "specn": 1,
+                "sales_price": "49.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 0
+            }, {
+                "goods_id": 3776,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180823/FsWMTcp3qbYhjil9rq12GMRuTgFW.jpg-goods.thumb",
+                "title": "名鸥牛仔裤",
+                "code": "22067",
+                "specn": 1,
+                "sales_price": "69.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1
+            }, {
+                "goods_id": 3749,
+                "thumb": "http://res.xiahe.me/default/none.png",
+                "title": "伊相伴",
+                "code": "629",
+                "specn": 1,
+                "sales_price": "48.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 1
+            }]
+        }, {
+            "sid": 115,
+            "stype": 2,
+            "logo": "http://res.xiahe.me/default/shop.png",
+            "name": "红苹果裤行",
+            "contact": "杨国义",
+            "mobile": "15005911152",
+            "tel": "",
+            "account": "",
+            "addr": "台江农贸二群体2248",
+            "owner": 90,
+            "idv_status": 1,
+            "blv_status": 1,
+            "views": 0,
+            "opendays": 291,
+            "watch": 0,
+            "fellow": 0,
+            "goods": [{
+                "goods_id": 2011,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180608/FnX9Bgguq-0OqQZf-D8c4dY0C6-F.jpg-goods.thumb",
+                "title": "震天龙",
+                "code": "907-9",
+                "specn": 8,
+                "sales_price": "78.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 0
+            }, {
+                "goods_id": 2010,
+                "thumb": "http://res.xiahe.me/public/uploads/user/20180608/FiWlnqRtW6j6qVOylBRHQwuvL5QL.jpg-goods.thumb",
+                "title": "老人头",
+                "code": "920-1",
+                "specn": 8,
+                "sales_price": "88.00",
+                "salesb_price": "0.00",
+                "salesc_price": "0.00",
+                "market_price": "0.00",
+                "is_clean": 0,
+                "is_hot": 0,
+                "is_new": 0
+            }, { "goods_id": 1980, "thumb": "http://res.xiahe.me/public/uploads/user/20180607/FuaYBTWaT5K9XiyJpI3EGF4TsSBP.jpg-goods.thumb", "title": "休闲裤", "code": "8813", "specn": 2, "sales_price": "25.00", "salesb_price": "0.00", "salesc_price": "0.00", "market_price": "0.00", "is_clean": 0, "is_hot": 0, "is_new": 0 }]
+        }, {
+            "sid": 134,
+            "stype": 2,
+            "logo": "http://res.xiahe.me/default/shop.png",
+            "name": "千秀庄",
+            "contact": "月月",
+            "mobile": "18059081956",
+            "tel": "",
+            "account": "",
+            "addr": "中亭街A1-54",
+            "owner": 157,
+            "idv_status": 1,
+            "blv_status": 1,
+            "views": 0,
+            "opendays": 291,
+            "watch": 0,
+            "fellow": 0,
+            "goods": [{ "goods_id": 2017, "thumb": "http://res.xiahe.me/public/uploads/user/20180608/Fm4vo1IQsS7KprbSJEkKPV1Qlwm_.jpg-goods.thumb", "title": "时尚小衫", "code": "8616", "specn": 1, "sales_price": "78.00", "salesb_price": "0.00", "salesc_price": "0.00", "market_price": "0.00", "is_clean": 0, "is_hot": 0, "is_new": 0 }, { "empty": true }, { "empty": true }]
+        }],
+        "notices": [{
+            "type": "围观",
+            "title": "知名度正式入驻敢潮！"
+        }, {
+            "type": "围观",
+            "title": "时尚佰分佰正式入驻敢潮！"
+        }, { "type": "围观", "title": "盈彩正式入驻敢潮！" }, { "type": "围观", "title": "小蛮腰正式入驻敢潮！" }, { "type": "围观", "title": "台江珂尼莎服装店正式入驻敢潮！" }, { "type": "围观", "title": "CYDCSMD正式入驻敢潮！" }, { "type": "围观", "title": "阿德正式入驻敢潮！" }, { "type": "围观", "title": "亮之秀正式入驻敢潮！" }, { "type": "围观", "title": "锦程鞋业正式入驻敢潮！" }, { "type": "围观", "title": "福建铃龙网络科技有限公司正式入驻敢潮！" }]
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+        "content-type": "application/json; charset=utf-8"
+    },
+    "config": {
+        "transformRequest": {},
+        "transformResponse": {},
+        "timeout": 5000,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "headers": { "Accept": "application/json, text/plain, */*", "Content-Type": "application/json;charset=utf-8" },
+        "baseURL": "http://open.51os.xyz",
+        "method": "post",
+        "url": "http://open.51os.xyz/System/home",
+        "data": "{\"cid\":350100,\"token\":\"910b9e9750d4b16c6fb73a8e49b49d06\"}"
+    },
+    "request": {}
+}
