@@ -81,14 +81,14 @@
                 <van-button class="item gc-exit-btn" size="large" @click="out">退出</van-button>
             </van-col>
         </van-row>
-        <changeInfo :show="show" @show-pop="closePop" :user_info="userinfo"></changeInfo>
+        <!-- <changeInfo :show="show" @show-pop="closePop" :user_info="userinfo"></changeInfo> -->
     </div>
 </template>
 
 <script>
 import menusItem from "@/components/menus_item";
 import { removeFromLocal } from "@/apis/localStorage";
-import changeInfo from "@/components/changeInfo";
+// import changeInfo from "@/components/changeInfo";
 // import { mapMutations, mapActions } from "vuex";
 // import store from "@/store";
 
@@ -101,7 +101,7 @@ export default {
   },
   components: {
     menusItem,
-    changeInfo
+    // changeInfo
   },
   created() {
     this.getUserInfo();

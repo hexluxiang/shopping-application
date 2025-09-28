@@ -1,6 +1,7 @@
 <template>
   <div>
-    <van-popup class="pop-class" v-model="show" position="right" :overlay="false">
+    <!-- v-model="show" -->
+    <van-popup class="pop-class"  position="right" :overlay="false">
       <van-nav-bar title="修改资料" left-text="返回" left-arrow right-text="保存" @click-left="onClickLeft(false)" @click-right="onClickRight" />
       <van-cell-group>
         <van-field v-model="user_info.nickname" clearable label="联系人:" placeholder="如:张三" @click-icon="$toast('question')" />
