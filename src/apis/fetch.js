@@ -1,13 +1,10 @@
-import Vue from 'vue'
 import axios from 'axios'
 import config from '@/config'
-import store from '@/store'
+import { useMainStore } from '@/stores/main'
 import { Toast } from 'vant';
 import router from '@/router'
 import { log } from '@/utils'
 import { saveToLocal, loadFromLocal, removeFromLocal } from '@/apis/localStorage'
-
-Vue.use(Toast)
     // 加载最小时间
 const MINI_TIME = 300
     // 超时时间
@@ -30,7 +27,8 @@ function pushRequest(config) {
         mask: true,
         message: '加载中...'
     })
-    store.dispatch('setLoding')
+    const store = useMainStore()
+    store.setLoding(true)
 }
 
 /**
@@ -47,7 +45,8 @@ function popRequest(config) {
     }
     if (!_requests.length) {
         Toast.clear();
-        store.dispatch('setLoding', false)
+        const store = useMainStore()
+        store.setLoding(false)
     }
 }
 
@@ -60,11 +59,11 @@ axios.defaults.baseURL = _apiHost
     /**
      * 请求地址，请求数据，是否静默，请求方法
      */
-    //console.log(store.state.token)
 export default (options = { url: '', data: {}, isSilence: false, method: 'GET' }) => {
-    console.log(store.state.token)
+    const store = useMainStore()
+    console.log(store.token)
     let _opts = { method: options.method, url: options.url }
-    let _data = Object.assign({}, options.data, { token: store.getters.GET })
+    let _data = Object.assign({}, options.data, { token: store.getToken })
     const _query = {}
     for (let _key in _data) {
         if (_data.hasOwnProperty(_key) && _data[_key] !== '') {

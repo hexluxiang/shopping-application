@@ -17,31 +17,41 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
+import { ref, getCurrentInstance } from 'vue'
+
 export default {
-  data() {
+  setup() {
+    const { proxy } = getCurrentInstance()
+    
+    const phone = ref("") //注册的手机号
+    const password = ref("") //注册的密码
+    const sms = ref("") //注册时短信验证码
+    const checked = ref(true)
+    
+    const sendSms = () => {
+      proxy.$apis.user
+        .userSms({ mobile: phone.value, action: "regist" })
+        .then(res => {
+          console.log(res);
+        });
+    }
+    
+    const reg = () => {
+      proxy.$apis.user
+        .userReg({ mobile: phone.value, password: password.value, vcode: sms.value })
+        .then(res => {
+          console.log(res);
+        });
+    }
+    
     return {
-      phone: "", //注册的手机号
-      password: "", //注册的密码
-      sms: "", //注册时短信验证码
-      checked: true
-    };
-  },
-  components: {},
-  methods: {
-    sendSms() {
-      this.$apis.user
-        .userSms({ mobile: this.phone, action: "regist" })
-        .then(res => {
-          console.log(res);
-        });
-    },
-    reg() {
-      this.$apis.user
-        .userReg({ mobile: this.phone, password: this.word, vcode: this.sms })
-        .then(res => {
-          console.log(res);
-        });
+      phone,
+      password,
+      sms,
+      checked,
+      sendSms,
+      reg
     }
   }
 };

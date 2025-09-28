@@ -23,57 +23,68 @@
       </div>
     </div>
   </div>
-  </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
+import { ref, getCurrentInstance } from 'vue'
+import { useRouter } from 'vue-router'
+import { useMainStore } from '@/stores/main'
 import {
   saveToLocal,
   loadFromLocal,
   removeFromLocal,
   getToLocal
 } from "@/apis/localStorage";
-import { mapMutations, mapActions, mapGetters } from "vuex";
 import { log } from "@/utils";
+
 export default {
-  data() {
-    return {
-      index: 1,
-      user: "", //登录的用户名
-      password: "", //登录的密码
-      phone: "", //注册的手机号
-      sms: "", //注册时短信验证码
-      checked: true
-    };
-  },
-  components: {},
-  methods: {
-    login() {
-      if (!(this.user && this.password)) {
+  setup() {
+    const router = useRouter()
+    const store = useMainStore()
+    const { proxy } = getCurrentInstance()
+    
+    const user = ref("")
+    const password = ref("")
+    const phone = ref("")
+    const sms = ref("")
+    const checked = ref(true)
+    const index = ref(1)
+    
+    const login = () => {
+      if (!(user.value && password.value)) {
         alert("请输入用户名和密码");
         return;
       }
-      this.$apis.user
-        .userLogin({ mobile: this.user, password: this.password })
+      
+      proxy.$apis.user
+        .userLogin({ mobile: user.value, password: password.value })
         .then(res => {
-          //log(res);
           Object.keys(res).forEach(item => {
             saveToLocal(item, res[item]);
           });
-          //getToLocal('code');
-          this.setToken(res.token);
-          this.$router.push({ path: "/home" });
+          store.setToken(res.token);
+          router.push({ path: "/home" });
         })
         .catch(res => {
           log(res);
         });
-    },
-    go(ev){
-      if(ev.keyCode == 13) this.login();
-    },
-    ...mapActions(["setToken"])
-  },
-  watch: {}
+    }
+    
+    const go = (ev) => {
+      if(ev.keyCode == 13) login();
+    }
+    
+    return {
+      user,
+      password,
+      phone,
+      sms,
+      checked,
+      index,
+      login,
+      go
+    }
+  }
 };
 </script>
 

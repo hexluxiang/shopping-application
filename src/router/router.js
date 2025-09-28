@@ -1,6 +1,5 @@
-import app from '@/views/app/app'
+import app from '@/views/app/app.vue'
 import { lazyViews, lazyComponents } from '@/utils/lazyVue'
-
 
 export default {
     routes: [{
@@ -10,7 +9,7 @@ export default {
         children: [{
                 path: '/home',
                 name: 'home',
-                component: lazyViews('home/home'), //首页
+                component: import('@/views/home/home.vue'), //首页
                 meta: { auth: false }
             }, {
                 path: '/shopcars',
@@ -26,7 +25,7 @@ export default {
             {
                 path: '/mes',
                 name: 'mes',
-                component: lazyViews('mes/mes'), //消息管理
+                component: import('@/views/mes/mes.vue'), //lazyViews('mes/mes'), //消息管理
                 meta: { auth: false }
             },
             {

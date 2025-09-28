@@ -75,7 +75,7 @@
           </div>
         </div>
       </div> -->
-      <homeGoodsList :goodsList="this.homeInfos.goods"></homeGoodsList>
+      <!-- <homeGoodsList :goodsList="this.homeInfos.goods"></homeGoodsList> -->
     </div>
     <div class="gc-home-shop">
       <div class="gc-cell">
@@ -123,107 +123,122 @@
       </div>
     </div>
     <!-- <detail :show="show" :goods_info="goods" :total="goodsNum" :goods_Id="goodsId" @show-pop='coloseDetail'></detail> -->
-     <shopDetail :shopFlag="shopFlag" :shopItem="shopItem" @show-pop='coloseDetail'></shopDetail>
+     <!-- <shopDetail :shopFlag="shopFlag" :shopItem="shopItem" @show-pop='coloseDetail'></shopDetail> -->
      <!-- 1.点击店铺进入
           2.返回则回到home
           3.在店铺里点击商品进入详情   
       -->
   </div>
-  </div>
 </template>
 
 <script>
+import { ref, reactive, computed, onMounted, getCurrentInstance } from 'vue'
 import { titleImgLink, navImgLink } from "./imgLink.js";
-import detail from "./goodsDetail";
-import shopDetail from "./shopDetail";
-import homeGoodsList from "./homeGoodsList"
+// import detail from "./goodsDetail.vue";
+// import shopDetail from "./shopDetail.vue";
+// import homeGoodsList from "./homeGoodsList.vue"
 
 export default {
-  data() {
-    return {
-      homeInfos: {},
-      images: [],
-      area: [],
-      //goods: {},
-      navImg: [
-        {
-          url: navImgLink,
-          name: "商品"
-        },
-        {
-          url: "http://wx.xiahe.me/img/wh.91531b1.png",
-          name: "新品"
-        },
-        {
-          url: "http://wx.xiahe.me/img/hot.548875d.png",
-          name: "爆款"
-        },
-        {
-          url: "http://wx.xiahe.me/img/product.5f63101.png",
-          name: "尾货"
-        }
-      ],
-      titleImgLink,
-      //show: false,//列表商品flag
-      shopFlag:false,//店铺flag
-      //goodsNum: {}, //商品出库入库数量
-      //goodsId: "" ,//商品id
-      shopItem:{},//店铺商品
-      hx:0
-    };
-  },
   components: {
-    detail,
-    shopDetail,
-    homeGoodsList
+    // detail,
+    // shopDetail,
+    // homeGoodsList
   },
-  methods: {
-    async get() {
-      let res = await this.$apis.user.getHomeInfo({
+  setup() {
+    const { proxy } = getCurrentInstance()
+    
+    const homeInfos = ref({})
+    const images = ref([])
+    const area = ref([])
+    const shopFlag = ref(false)
+    const shopItem = ref({})
+    const hx = ref(0)
+    
+    const navImg = ref([
+      {
+        url: navImgLink,
+        name: "商品"
+      },
+      {
+        url: "http://wx.xiahe.me/img/wh.91531b1.png",
+        name: "新品"
+      },
+      {
+        url: "http://wx.xiahe.me/img/hot.548875d.png",
+        name: "爆款"
+      },
+      {
+        url: "http://wx.xiahe.me/img/product.5f63101.png",
+        name: "尾货"
+      }
+    ])
+    
+    const get = async () => {
+      let res = await proxy.$apis.user.getHomeInfo({
         cid: 350100
       });
-      this.homeInfos = res;
-      console.log(this.homeInfos); //首页所有请求内容
-      this.images = this.homeInfos.slider;
-      this.area = this.homeInfos.area;
-      // this.banner = this.homeInfos.banner
-      // console.log(this.banner)
-    },
-    selectCity() {
-      console.log("city");
-      console.log(this.$data);
-      console.log(vm.setnum());
-    },
-    search() {
-      console.log("scan");
-    },
-    coloseDetail(flag) {
-      //this.show = flag;
-      this.shopFlag = flag;
-    },
-    goToShop(item,flag){
-      console.log(12345)
-        this.shopFlag = flag;
-        this.shopItem = item;
-        console.log('=======================');
-        console.log(this.shopItem);
-        console.log('=======================');        
+      homeInfos.value = res;
+      console.log(homeInfos.value); //首页所有请求内容
+      images.value = homeInfos.value.slider;
+      area.value = homeInfos.value.area;
     }
-  },
-  created() {
-    this.get();
-  },
-  computed:{
-    getnum:function(){
-      return this.hx *10;
-    },
-    setnum:{
-     get:function (val) {
-       return this.hx*100
-     },
-     set:function(val) {
-      this.hx = 0.1 
-     }
+    
+    const selectCity = () => {
+      console.log("city");
+      console.log(setnum.value);
+    }
+    
+    const search = () => {
+      console.log("scan");
+    }
+    
+    const coloseDetail = (flag) => {
+      shopFlag.value = flag;
+    }
+    
+    const goToShop = (item, flag) => {
+      console.log(12345)
+      shopFlag.value = flag;
+      shopItem.value = item;
+      console.log('=======================');
+      console.log(shopItem.value);
+      console.log('=======================');        
+    }
+    
+    // 计算属性
+    const getnum = computed(() => {
+      return hx.value * 10;
+    })
+    
+    const setnum = computed({
+      get: function () {
+        return hx.value * 100
+      },
+      set: function(val) {
+        hx.value = 0.1 
+      }
+    })
+    
+    onMounted(() => {
+      get();
+    })
+    
+    return {
+      homeInfos,
+      images,
+      area,
+      navImg,
+      titleImgLink,
+      shopFlag,
+      shopItem,
+      hx,
+      get,
+      selectCity,
+      search,
+      coloseDetail,
+      goToShop,
+      getnum,
+      setnum
     }
   }
 };

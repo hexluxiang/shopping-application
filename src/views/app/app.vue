@@ -1,6 +1,6 @@
 <template>
   <div class="app-page">
-    <router-view/>    
+    <router-view />
     <div class="tabs">
       <div class="tab-item">
         <router-link to="/home">
@@ -16,8 +16,8 @@
           </i>
         </router-link>
       </div>
-      <div class="tab-item" v-if="!token" >
-        <router-link to="/entry" @click="entry" >
+      <div class="tab-item" v-if="!token">
+        <router-link to="/entry" @click="entry">
           <i class="gc-iconroundadd">
             <span>入住</span>
           </i>
@@ -41,36 +41,32 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
-import { loadFromLocal } from '@/apis/localStorage'
-import {mapGetters} from 'vuex'
+<script>
+import { computed } from "vue";
+import { useMainStore } from "@/stores/main";
+
 export default {
   name: "App",
-  data() {
+  setup() {
+    const store = useMainStore();
+
+    const token = computed(() => store.token);
+
+    const entry = () => {
+      var dis = store.token;
+      //console.log(dis)
+      if (dis) {
+        // 可以设置其他状态
+      } else {
+        // 可以设置其他状态
+      }
+    };
+
     return {
-      flag:true
+      token,
+      entry,
     };
   },
-  created() {
-    //console.log(this.$store.state.token)
-  },
-  components: {},
-  computed:{
-    token(){
-      return this.$store.state.token
-    }
-  },
-  methods: {
-    entry() {
-      var dis = this.$store.state.token;
-      //console.log(dis)
-      if(dis){
-        this.flag = false
-      }else{
-        this.flag = true
-      }
-    }
-  }
 };
 </script>
 
