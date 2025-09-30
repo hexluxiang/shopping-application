@@ -1,5 +1,6 @@
 # 第一步：用Node环境打包前端代码
-FROM node:16-alpine as builder
+# FROM node:16-alpine as builder 
+FROM docker.xuanyuan.me/library/node:latest as builder
 # 新建一个工作目录
 WORKDIR /app
 # 把项目的依赖文件复制到容器里
@@ -15,7 +16,7 @@ RUN echo "build完成"
 
 # 第二步：用Nginx运行打包好的代码
 # FROM nginx:alpine
-FROM nginx:latest 
+FROM registry.docker-cn.com/library/nginx:latest 
 # 把第一步打包好的dist文件夹，复制到Nginx的默认目录
 COPY --from=builder /app/dist /var/www/my-shop
 # 复制自定义的Nginx配置（下面会创建这个文件）
