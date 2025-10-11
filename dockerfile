@@ -16,7 +16,7 @@ RUN echo "build完成"
 
 # 第二步：用Nginx运行打包好的代码
 # FROM nginx:alpine
-FROM docker.xuanyuan.run/library/nginx:stable-perl
+FROM docker.xuanyuan.run/library/nginx:latest
 # 把第一步打包好的dist文件夹，复制到Nginx的默认目录
 COPY --from=builder /app/dist /var/www/my-shop
 # 复制自定义的Nginx配置（下面会创建这个文件）
